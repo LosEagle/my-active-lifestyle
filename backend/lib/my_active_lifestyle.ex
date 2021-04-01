@@ -1,6 +1,6 @@
-defmodule Backend do
+defmodule MyActiveLifestyle do
   @moduledoc """
-  Documentation for `Backend`.
+  Documentation for `MyActiveLifestyle`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule Backend do
 
   ## Examples
 
-      iex> Backend.hello()
+      iex> MyActiveLifestyle.hello()
       :world
 
   """

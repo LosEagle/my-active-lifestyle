@@ -1,4 +1,4 @@
-defmodule Backend.Application do
+defmodule MyActiveLifestyle.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -10,6 +10,7 @@ defmodule Backend.Application do
     children = [
       # Starts a worker by calling: Backend.Worker.start_link(arg)
       # {Backend.Worker, arg}
+      {Plug.Cowboy, scheme: :http, plug: MyActiveLifestyle.Router, options: [port: 8080]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

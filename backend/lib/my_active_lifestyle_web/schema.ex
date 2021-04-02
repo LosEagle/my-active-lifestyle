@@ -1,16 +1,22 @@
 defmodule MyActiveLifestyleWeb.Schema do
   use Absinthe.Schema
-  import_types MyActiveLifestyleWeb.Schema.ContentTypes
+  import_types(MyActiveLifestyleWeb.Schema.ContentTypes)
 
   alias MyActiveLifestyleWeb.Resolvers
 
   query do
-
-    @desc "Get all posts"
-    field :posts, list_of(:post) do
-      resolve &Resolvers.Content.list_posts/3
+    @desc "Get all categories"
+    field :categories, list_of(:category) do
+      resolve(&Resolvers.Category.list_categories/3)
     end
-
   end
 
+  mutation do
+    @desc "Create a category"
+    field :create_category, type: :category do
+      arg(:name, non_null(:string))
+
+      resolve(&Resolvers.Category.create_category/3)
+    end
+  end
 end

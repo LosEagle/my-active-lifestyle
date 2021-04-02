@@ -26,7 +26,8 @@ defmodule MyActiveLifestyle.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:plug_cowboy, "~> 2.4"},
       {:jason, "~> 1.2"},
-      {:absinthe_plug, "~> 1.5"}
+      {:absinthe_plug, "~> 1.5"},
+      {:ecto_sqlite3, "~> 0.5.3"}
     ]
   end
 end

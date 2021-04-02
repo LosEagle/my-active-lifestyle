@@ -1,9 +1,8 @@
 defmodule MyActiveLifestyleWeb.Schema.ContentTypes do
   use Absinthe.Schema.Notation
 
-  object :post do
-    field :id, :id
-    field :title, :string
-    field :body, :string
+  object :category do
+    field(:id, :id)
+    field(:name, :string)
   end
 end

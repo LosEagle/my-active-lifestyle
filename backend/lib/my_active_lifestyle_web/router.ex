@@ -1,23 +1,25 @@
 defmodule MyActiveLifestyleWeb.Router do
   use Plug.Router
 
-  plug Plug.Parsers,
+  plug(Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json, Absinthe.Plug.Parser],
     pass: ["*/*"],
     json_decoder: Jason
-  plug :match
-  plug :dispatch
+  )
 
+  plug(:match)
+  plug(:dispatch)
 
-  forward "/api",
+  forward("/api",
     to: Absinthe.Plug,
     init_opts: [schema: MyActiveLifestyleWeb.Schema]
+  )
 
-  forward "/graphiql",
+  forward("/graphiql",
     to: Absinthe.Plug.GraphiQL,
     init_opts: [
       schema: MyActiveLifestyleWeb.Schema,
-      interface: :playground,
+      interface: :playground
     ]
-
+  )
 end

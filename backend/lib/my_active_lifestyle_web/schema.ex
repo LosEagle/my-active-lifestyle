@@ -18,5 +18,12 @@ defmodule MyActiveLifestyleWeb.Schema do
 
       resolve(&Resolvers.Category.create_category/3)
     end
+
+    @desc "Remove a category"
+    field :remove_category, type: :category do
+      arg(:id, non_null(:id))
+
+      resolve(&Resolvers.Category.remove_category/3)
+    end
   end
 end

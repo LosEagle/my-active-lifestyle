@@ -5,4 +5,10 @@ defmodule MyActiveLifestyleWeb.Schema.ContentTypes do
     field(:id, :id)
     field(:name, :string)
   end
+
+  object :goal do
+    field(:id, :id)
+    field(:name, :string)
+    field(:category_id, :integer)
+  end
 end

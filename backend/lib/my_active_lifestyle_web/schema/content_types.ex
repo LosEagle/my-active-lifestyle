@@ -11,4 +11,13 @@ defmodule MyActiveLifestyleWeb.Schema.ContentTypes do
     field(:name, :string)
     field(:category_id, :integer)
   end
+
+  object :activity do
+    field(:id, :id)
+    field(:title, :string)
+    field(:rating, :string)
+    field(:story, :string)
+    field(:category_id, :integer)
+    field(:goal_id, :integer)
+  end
 end

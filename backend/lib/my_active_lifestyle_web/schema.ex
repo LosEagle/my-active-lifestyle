@@ -14,6 +14,11 @@ defmodule MyActiveLifestyleWeb.Schema do
     field :goals, list_of(:goal) do
       resolve(&Resolvers.Goal.list_goals/3)
     end
+
+    @desc "Get all activities"
+    field :activities, list_of(:activity) do
+      resolve(&Resolvers.Activity.list_activities/3)
+    end
   end
 
   mutation do
@@ -44,6 +49,24 @@ defmodule MyActiveLifestyleWeb.Schema do
       arg(:id, non_null(:id))
 
       resolve(&Resolvers.Goal.remove_goal/3)
+    end
+
+    @desc "Create an activity"
+    field :create_activity, type: :activity do
+      arg(:title, non_null(:string))
+      arg(:story, non_null(:string))
+      arg(:rating, :string)
+      arg(:category_id, non_null(:integer))
+      arg(:goal_id, :integer)
+
+      resolve(&Resolvers.Activity.create_activity/3)
+    end
+
+    @desc "Remove an activity"
+    field :remove_activity, type: :activity do
+      arg(:id, non_null(:id))
+
+      resolve(&Resolvers.Activity.remove_activity/3)
     end
   end
 end

@@ -29,11 +29,11 @@ defmodule MyActiveLifestyleWeb.Schema do
       resolve(&Resolvers.Category.create_category/3)
     end
 
-    @desc "Remove a category"
-    field :remove_category, type: :category do
+    @desc "Delete a category"
+    field :delete_category, type: :category do
       arg(:id, non_null(:id))
 
-      resolve(&Resolvers.Category.remove_category/3)
+      resolve(&Resolvers.Category.delete_category/3)
     end
 
     @desc "Create a goal"
@@ -44,11 +44,11 @@ defmodule MyActiveLifestyleWeb.Schema do
       resolve(&Resolvers.Goal.create_goal/3)
     end
 
-    @desc "Remove a goal"
-    field :remove_goal, type: :goal do
+    @desc "Delete a goal"
+    field :delete_goal, type: :goal do
       arg(:id, non_null(:id))
 
-      resolve(&Resolvers.Goal.remove_goal/3)
+      resolve(&Resolvers.Goal.delete_goal/3)
     end
 
     @desc "Create an activity"
@@ -62,11 +62,11 @@ defmodule MyActiveLifestyleWeb.Schema do
       resolve(&Resolvers.Activity.create_activity/3)
     end
 
-    @desc "Remove an activity"
-    field :remove_activity, type: :activity do
+    @desc "Delete an activity"
+    field :delete_activity, type: :activity do
       arg(:id, non_null(:id))
 
-      resolve(&Resolvers.Activity.remove_activity/3)
+      resolve(&Resolvers.Activity.delete_activity/3)
     end
   end
 end

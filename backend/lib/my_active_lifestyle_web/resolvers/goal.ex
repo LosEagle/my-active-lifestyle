@@ -12,7 +12,7 @@ defmodule MyActiveLifestyleWeb.Resolvers.Goal do
     MyActiveLifestyle.Repo.insert(new_goal)
   end
 
-  def remove_goal(_parent, args, _resolution) do
+  def delete_goal(_parent, args, _resolution) do
     goal = MyActiveLifestyle.Repo.get(MyActiveLifestyle.Goal, args.id)
 
     MyActiveLifestyle.Repo.delete(goal)

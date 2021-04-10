@@ -18,7 +18,7 @@ defmodule MyActiveLifestyleWeb.Resolvers.Activity do
     MyActiveLifestyle.Repo.insert(new_activity)
   end
 
-  def remove_activity(_parent, args, _resolution) do
+  def delete_activity(_parent, args, _resolution) do
     activity = MyActiveLifestyle.Repo.get(MyActiveLifestyle.Activity, args.id)
 
     MyActiveLifestyle.Repo.delete(activity)
